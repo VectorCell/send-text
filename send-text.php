@@ -12,11 +12,10 @@ $headers = "From: " . $from . "\r\n" .
 	"Reply-To: " . $from . "\r\n" .
 	"X-Mailer: PHP/" . phpversion();
 
-if ($number === "" || $message === "" || $from === "") {
-	echo '{"sent":false}';
-} else {
-	$sent = mail($to, $subject, $message, $headers);
-	echo '{"sent":' . $sent . '}';
-}
+$sent = mail($to, $subject, $message, $headers);
 
+if ($sent)
+	echo '{"sent":true}';
+else
+	echo '{"sent":false}';
 ?>
