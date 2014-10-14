@@ -14,8 +14,16 @@ $headers = "From: " . $from . "\r\n" .
 
 $sent = mail($to, $subject, $message, $headers);
 
+echo "{\n";
+
 if ($sent)
-	echo '{"sent":true}';
+	echo "\t\"sent\":true\n";
 else
-	echo '{"sent":false}';
+	echo "\t\"sent\":false\n";
+
+echo "\t\"number\":$number\n";
+echo "\t\"from\":\"$from\"\n";
+echo "\n\"message\":\"$message\"\n";
+
+echo "}\n";
 ?>
