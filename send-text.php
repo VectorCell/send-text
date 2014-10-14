@@ -22,8 +22,9 @@ else
 	echo "\t\"sent\":false\n";
 
 echo "\t\"number\":$number\n";
+echo "\t\"to\":\"$to\"\n";
 echo "\t\"from\":\"$from\"\n";
-echo "\n\"message\":\"$message\"\n";
+echo "\t\"message\":\"$message\"\n";
 
 echo "}\n";
 ?>
