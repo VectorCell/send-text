@@ -5,7 +5,7 @@ header('Content-Type: application/json');
 $number  = $_GET["number"];
 $to      = "$number@txt.att.net";
 $subject = "sms";
-$message = $_GET["message"];
+$message = wordwrap($_GET["message"], 70, "\r\n");
 $from    = $_GET["from"];
 
 $headers = "From: " . $from . "\r\n" .
